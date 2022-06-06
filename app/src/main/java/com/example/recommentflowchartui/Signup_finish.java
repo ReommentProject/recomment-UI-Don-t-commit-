@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,43 +16,41 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Signup_page1 extends AppCompatActivity {
-    private Button next;
-    private EditText id,password,nickname;
+import org.w3c.dom.Text;
 
+public class Signup_finish extends AppCompatActivity {
 
+    private Button finish;
+    private EditText profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_signup_page1);
+        setContentView(R.layout.activity_signup_finish);
         ActionBar actionBar=getSupportActionBar();
         actionBar.hide();
-        next=findViewById(R.id.next);
-        id=findViewById(R.id.id);
-        password=findViewById(R.id.password);
-        nickname=findViewById(R.id.nickname);
-
-        next.setOnClickListener(new View.OnClickListener() {
+        finish=findViewById(R.id.finish);
+        profile=findViewById(R.id.profile);
+        finish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String str1,str2,str3;
-                str1=id.getText().toString();
-                str2=password.getText().toString();
-                str3=nickname.getText().toString();
-
-                if((str1.length()!=0)&&(str2.length()!=0)&&(str3.length()!=0))
+                String str="";
+                str=profile.getText().toString();
+                if(str.length()>=10)
                 {
-                    Intent intent=new Intent(Signup_page1.this,Signup_page2.class);
+                    customToastView("회원가입 완료");
+                    Intent intent=new Intent(Signup_finish.this,Loginpage.class);
                     startActivity(intent);
                 }
-                else
+                else if(str.length()<10)
                 {
-                    customToastView("작성하지 않은 정보가 있습니다");
+                    customToastView("10자이상 작성해주세요.");
                 }
+
             }
         });
+
     }
     public void customToastView(String text)
     {
