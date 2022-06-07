@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecommentFlowchartUI">
         <activity
+            android:name=".post_page"
+            android:exported="false" />
+        <activity
             android:name=".Signup_finish"
             android:exported="false" />
         <activity
