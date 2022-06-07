@@ -13,6 +13,7 @@ import android.widget.Button;
 public class Loginpage extends AppCompatActivity {
 
     private Button Signup;
+    private Button Login;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +25,7 @@ public class Loginpage extends AppCompatActivity {
         actionBar.hide();
 
         Signup=findViewById(R.id.Signup);
+        Login=findViewById(R.id.login);
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,5 +33,12 @@ public class Loginpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+       /* Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Loginpage.this,post_page.class);
+                startActivity(intent);
+            }
+        });*/
     }
 }
