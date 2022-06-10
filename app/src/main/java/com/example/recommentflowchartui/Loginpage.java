@@ -33,12 +33,12 @@ public class Loginpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       /* Login.setOnClickListener(new View.OnClickListener() {
+       Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Loginpage.this,post_page.class);
+                Intent intent=new Intent(Loginpage.this,Mainpage.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }

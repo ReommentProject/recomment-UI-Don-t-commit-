@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradation1"
+    tools:context=".Loginpage">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="7dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="YouTube Link" />
+
+        <EditText
+            android:id="@+id/uploadlink"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/buttondesign"
+            android:ems="10"
+            android:hint=" Link" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Title" />
+
+        <EditText
+            android:id="@+id/uploadtitle"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/buttondesign"
+            android:hint=" title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:text="review" />
+
+        <EditText
+            android:id="@+id/uploadreview"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttondesign"
+            android:layout_marginTop="7dp"
+            android:ems="10"
+            android:hint=" review" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:text="TextView" />
+
+        <EditText
+            android:id="@+id/selectcategory"
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:background="@drawable/buttondesign"
+            android:layout_marginTop="7dp"
+            android:ems="10"
+            android:hint=" category" />
+
+        <Button
+            android:id="@+id/upload"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/buttondesign"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="upload" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecommentFlowchartUI">
         <activity
+            android:name=".Mainpage"
+            android:exported="false" />
+        <activity
+            android:name=".upload_page"
+            android:exported="false" />
+        <activity
             android:name=".post_page"
             android:exported="false" />
         <activity

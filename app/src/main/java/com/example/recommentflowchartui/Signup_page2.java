@@ -1,23 +1,30 @@
 package com.example.recommentflowchartui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Signup_page2 extends AppCompatActivity {
     private Button next2;
-    private CheckBox science,history,sports,music,funny,game,animal,cook,movie,drama;
+    ListView listViewData;
+    ArrayAdapter<String>adapter;
+    String[]arrayPeliculas={"Science" , "History" ,"Sports" ,"Music" ,"Entertainment" ,"Game" , "Animal" ,"Cooking" ,"Movie" ,"Drama"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,75 +33,38 @@ public class Signup_page2 extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page2);
         ActionBar actionBar=getSupportActionBar();
         actionBar.hide();
-        next2=findViewById(R.id.next2);
-        science=findViewById(R.id.science);
-        history=findViewById(R.id.history);
-        sports=findViewById(R.id.sports);
-        music=findViewById(R.id.music);
-        funny=findViewById(R.id.funny);
-        game=findViewById(R.id.game);
-        animal=findViewById(R.id.animal);
-        cook=findViewById(R.id.cook);
-        movie=findViewById(R.id.movie);
-        drama=findViewById(R.id.drama);
-        next2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int checknum=0;
-                if(science.isChecked())
-                {
-                    //값을 데이터베이스에 저장하는 코드가 필요하다.
-                    checknum+=1;
-                }
-                if(history.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(music.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(funny.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(game.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(animal.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(cook.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(movie.isChecked())
-                {
-                    checknum+=1;
-                }
-                if(drama.isChecked())
-                {
-                    checknum+=1;
-                }
-                if((0<checknum)&&(checknum<=5))
-                {
-                    Intent intent=new Intent(Signup_page2.this,Signup_finish.class);
-                    startActivity(intent);
-                }
-                else if(5<checknum)
-                {
-                   customToastView("5개 이하로 선택해주세요!!");
-                }
-                else
-                {
-                    customToastView("1개 이상 선택해주세요!!");
-                }
+        listViewData=findViewById(R.id.listView_data);
+        adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice,arrayPeliculas);
+        listViewData.setAdapter(adapter);
 
-            }
-        });
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id =item.getItemId();
+        if(id==R.id.item_done)
+        {
+            String itemSelected="Selected items:\n";
+            for(int i=0;i<listViewData.getCount();i++)
+            {
+                if(listViewData.isItemChecked(i)){
+                    itemSelected+=listViewData.getItemAtPosition(i)+"\n";
+
+
+                }
+            }
+            customToastView("성공했습니다");
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public void customToastView(String text)
     {
         LayoutInflater inflater=getLayoutInflater();

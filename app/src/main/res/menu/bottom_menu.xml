@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+ <item
+     android:id="@+id/action_friends"
+     android:enabled="true"
+     android:fontFamily="@font/font"
+     android:icon="@drawable/friends"
+     android:title="Friends"/>
+    <item
+        android:id="@+id/action_usergroup"
+        android:enabled="true"
+        android:fontFamily="@font/font"
+        android:icon="@drawable/usergroup"
+        android:title="Other"/>
+    <item
+        android:id="@+id/action_Mypage"
+        android:enabled="true"
+        android:fontFamily="@font/font"
+        android:icon="@drawable/mypage"
+        android:title="Me"/>
+
+
+</menu>
