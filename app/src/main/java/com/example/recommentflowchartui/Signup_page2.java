@@ -33,9 +33,18 @@ public class Signup_page2 extends AppCompatActivity {
         setContentView(R.layout.activity_signup_page2);
         ActionBar actionBar=getSupportActionBar();
         actionBar.hide();
+        next2=findViewById(R.id.next2);
         listViewData=findViewById(R.id.listView_data);
         adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_multiple_choice,arrayPeliculas);
         listViewData.setAdapter(adapter);
+        next2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Signup_page2.this,Signup_finish.class);
+                startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -49,18 +58,29 @@ public class Signup_page2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         int id =item.getItemId();
+        int count=0;
         if(id==R.id.item_done)
         {
-            String itemSelected="Selected items:\n";
+            //String itemSelected="Selected items:\n";
             for(int i=0;i<listViewData.getCount();i++)
             {
                 if(listViewData.isItemChecked(i)){
-                    itemSelected+=listViewData.getItemAtPosition(i)+"\n";
-
+                    //itemSelected+=listViewData.getItemAtPosition(i)+"\n";
+                    count+=1;
 
                 }
             }
-            customToastView("성공했습니다");
+            if(count==0)
+            {
+                customToastView("1개 이상 선택해주세요");
+            } else if (count>5)
+            {
+                customToastView("5개 이하로 선택해주세요");
+            }
+            else
+            {
+               //아직 구현 못함 ㅠㅠ 토스트메시지 띄우고 싶은데
+            }
         }
         return super.onOptionsItemSelected(item);
     }
