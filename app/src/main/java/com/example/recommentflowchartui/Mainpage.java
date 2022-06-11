@@ -3,6 +3,7 @@ package com.example.recommentflowchartui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -30,34 +31,43 @@ public class Mainpage extends AppCompatActivity {
         setContentView(R.layout.activity_mainpage);
         ActionBar actionBar=getSupportActionBar();
         actionBar.hide();
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, new Frag1()).commit();
 
         bottomNavigationView=findViewById(R.id.bottomNavi);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch(item.getItemId())
-                {
+                Fragment fragment = null;
+
+                switch (item.getItemId()) {
                     case R.id.action_friends:
-                        setFrag(0);
+                        //fragment= new Fragment1();
+                        fragment = new Frag1();
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.add(R.id.main_frame, fragment);
+                        fragmentTransaction.commit();
                         break;
                     case R.id.action_usergroup:
-                        setFrag(1);
+                        fragment = new Frag2();
                         break;
                     case R.id.action_Mypage:
-                        setFrag(2);
+                        fragment = new Frag3();
                         break;
                 }
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.main_frame, fragment).commit();
                 return true;
             }
         });
-        frag1=new Frag1();
+        /*frag1=new Frag1();
         frag2=new Frag2();
         frag3=new Frag3();
-        setFrag(0);//첫 메인페이지 화면
+        setFrag(0);//첫 메인페이지 화면*/
     }
 
     //프래그먼트 교체가 일어나는 실행문
-    private void setFrag(int n){
+   /* private void setFrag(int n){
         fm=getSupportFragmentManager();
         ft=fm.beginTransaction();
         switch (n)
@@ -75,5 +85,5 @@ public class Mainpage extends AppCompatActivity {
                 ft.commit();
                 break;
         }
-    }
+    }*/
 }
