@@ -3,6 +3,7 @@ package com.example.recommentflowchartui;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,6 +19,8 @@ import android.widget.Toast;
 public class Signup_page1 extends AppCompatActivity {
     private Button next;
     private EditText id,password,nickname;
+
+    public User createdUser;
 
 
     @Override
@@ -43,9 +46,10 @@ public class Signup_page1 extends AppCompatActivity {
 
                 if((str1.length()!=0)&&(str2.length()!=0)&&(str3.length()!=0))
                 {
-                    //Content createdUser = new Content()
+                    createdUser = new User(str1, str2, str3);
 
                     Intent intent=new Intent(Signup_page1.this,Signup_page2.class);
+                    intent.putExtra("createdUser", createdUser);
                     startActivity(intent);
                 }
                 else

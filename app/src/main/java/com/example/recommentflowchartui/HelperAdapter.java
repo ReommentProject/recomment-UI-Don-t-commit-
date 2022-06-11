@@ -14,16 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class HelperAdapter extends RecyclerView.Adapter {
     Context context;
-    ArrayList<String> arrayList , arrayListName;
+    List<Content> contentList;
 
-    public HelperAdapter(Context context, ArrayList arrayList, ArrayList arrayListName) {
+    public HelperAdapter(Context context, List<Content> contentList) {
         this.context = context;
-        this.arrayList = arrayList;
-        this.arrayListName=arrayListName;
+        this.contentList = contentList;
     }
 
     @NonNull
@@ -37,8 +36,8 @@ public class HelperAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         ViewHolderClass viewHolderClass=(ViewHolderClass)holder;
-        viewHolderClass.textView1.setText(arrayList.get(position));
-        viewHolderClass.textView2.setText(arrayListName.get(position));
+        viewHolderClass.textView1.setText(contentList.get(position).getTitle());
+        viewHolderClass.textView2.setText(contentList.get(position).getContent());
 
         String url="https://youtu.be/JNL44p5kzTk";
         String id = url.substring(url.lastIndexOf("/")+1);  //맨마지막 '/'뒤에 id가있으므로 그것만 파싱해줌
@@ -57,7 +56,7 @@ public class HelperAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return arrayListName.size();
+        return contentList.size();
     }
     public class ViewHolderClass extends RecyclerView.ViewHolder
     {

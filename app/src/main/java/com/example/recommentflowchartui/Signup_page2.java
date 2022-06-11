@@ -40,7 +40,11 @@ public class Signup_page2 extends AppCompatActivity {
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                User cUser = (User) getIntent().getSerializableExtra("createdUser");
+
                 Intent intent=new Intent(Signup_page2.this,Signup_finish.class);
+                intent.putExtra("createdUser", cUser);
                 startActivity(intent);
             }
         });

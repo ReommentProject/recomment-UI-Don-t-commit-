@@ -2,11 +2,9 @@ package com.example.recommentflowchartui;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -49,12 +46,10 @@ public class Loginpage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       Login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 checkUser();
-
             }
         });
 
@@ -64,14 +59,14 @@ public class Loginpage extends AppCompatActivity {
 
     private void checkUser() {
 
-        Call<List<Content>> call = RetrofitClient.getInstance().getMyApi().getMainContent();
+        Call<List<User>> call = RetrofitClient.getInstance().getMyApi().getUsers();
 
-        call.enqueue(new Callback<List<Content>>() {
+        call.enqueue(new Callback<List<User>>() {
             @Override
-            public void onResponse(Call<List<Content>> call, Response<List<Content>> response) {
+            public void onResponse(Call<List<User>> call, Response<List<User>> response) {
                 boolean rightInput=false;
 
-                List<Content> userList = response.body();
+                List<User> userList = response.body();
 
                 for(int i=0;i<userList.size();i++){
                     String DBId = userList.get(i).getUser_Id();
@@ -93,7 +88,7 @@ public class Loginpage extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<List<Content>> call, Throwable t) {
+            public void onFailure(Call<List<User>> call, Throwable t) {
                 Toast.makeText(Loginpage.this, "An error has occured in get", Toast.LENGTH_LONG).show();
             }
 
