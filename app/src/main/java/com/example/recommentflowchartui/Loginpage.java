@@ -2,18 +2,31 @@ package com.example.recommentflowchartui;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Loginpage extends AppCompatActivity {
 
     private Button Signup;
     private Button Login;
+    private EditText Id;
+    private EditText Password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +39,9 @@ public class Loginpage extends AppCompatActivity {
 
         Signup=findViewById(R.id.Signup);
         Login=findViewById(R.id.login);
+        Id = findViewById(R.id.ID);
+        Password = findViewById(R.id.Password);
+
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,9 +52,52 @@ public class Loginpage extends AppCompatActivity {
        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Loginpage.this,Mainpage.class);
-                startActivity(intent);
+
+                checkUser();
+
             }
         });
+
+    }
+
+
+
+    private void checkUser() {
+
+        Call<List<Content>> call = RetrofitClient.getInstance().getMyApi().getMainContent();
+
+        call.enqueue(new Callback<List<Content>>() {
+            @Override
+            public void onResponse(Call<List<Content>> call, Response<List<Content>> response) {
+                boolean rightInput=false;
+
+                List<Content> userList = response.body();
+
+                for(int i=0;i<userList.size();i++){
+                    String DBId = userList.get(i).getUser_Id();
+                    String DBPwd = userList.get(i).getUser_Pwd();
+                    String GetId = Id.getText().toString();
+                    String GetPwd = Password.getText().toString();
+
+                    if(GetId.equals(DBId)&&GetPwd.equals(DBPwd)){
+                        Intent intent=new Intent(Loginpage.this,Mainpage.class);
+                        startActivity(intent);
+                        rightInput=true;
+                        break;
+                    }
+                }
+
+                if(!rightInput){
+                    Toast.makeText(Loginpage.this, "아이디 혹은 비밀번호가 일치하지 않습니다.ㅕ", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Content>> call, Throwable t) {
+                Toast.makeText(Loginpage.this, "An error has occured in get", Toast.LENGTH_LONG).show();
+            }
+
+        });
+
     }
 }

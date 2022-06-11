@@ -43,6 +43,8 @@ public class Signup_page1 extends AppCompatActivity {
 
                 if((str1.length()!=0)&&(str2.length()!=0)&&(str3.length()!=0))
                 {
+                    //Content createdUser = new Content()
+
                     Intent intent=new Intent(Signup_page1.this,Signup_page2.class);
                     startActivity(intent);
                 }
