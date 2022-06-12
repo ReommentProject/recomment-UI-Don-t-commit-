@@ -5,40 +5,41 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Frag3 extends Fragment {
-
-    private View view;
+public class FriendPage extends AppCompatActivity {
     private Button friendlist;
-    private Button recomment;
+    private Button breakfriend;
     private ArrayList<CategoryData> arrayList;
     private CategoryAdapter categoryAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
-    private TextView profile;
 
 
-
-
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.frag3,container,false);
-        friendlist=view.findViewById(R.id.seefriend);
-        recomment=view.findViewById(R.id.goupload);
-        profile=view.findViewById(R.id.myprofile);
-        recyclerView=view.findViewById(R.id.recyclerView3);
-        linearLayoutManager=new LinearLayoutManager(getActivity().getApplicationContext());
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_friend_page);
+        ActionBar actionBar=getSupportActionBar();
+        actionBar.hide();
+        friendlist=(Button) findViewById(R.id.seefriend);
+        breakfriend=(Button) findViewById(R.id.breakfriend);
+        recyclerView=(RecyclerView) findViewById(R.id.recyclerView4);
+        linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
 
         arrayList=new ArrayList<>();
@@ -49,31 +50,19 @@ public class Frag3 extends Fragment {
             CategoryData categoryData=new CategoryData(R.drawable.star,"카테고리");
             arrayList.add(categoryData);
         }
-
-        profile.setOnClickListener(new View.OnClickListener() {
+        breakfriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),SeeProfile.class);
-                startActivity(intent);
-            }
-        });
-
-        recomment.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),upload_page.class);
-                startActivity(intent);
+                //나의 계정 친구데이터베이스에서 친구 삭제
             }
         });
         friendlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),Friendlist.class);
+                Intent intent=new Intent(FriendPage.this,Friendlist.class);
                 startActivity(intent);
             }
         });
 
-        return view;
     }
 }
