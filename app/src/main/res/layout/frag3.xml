@@ -5,6 +5,17 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradation1"
     tools:context=".Frag3">
+    <TextView
+        android:id="@+id/mypagenick"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:fontFamily="@font/font"
+        android:textSize="30sp"
+        android:text="Nickname" />
 
     <TextView
         android:id="@+id/textView3"

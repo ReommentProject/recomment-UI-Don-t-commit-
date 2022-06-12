@@ -1,11 +1,19 @@
 package com.example.recommentflowchartui;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContract;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,12 +21,22 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class Signup_page1 extends AppCompatActivity {
     private Button next;
     private EditText id,password,nickname;
+    ImageView imageView;
+    Uri uri;
 
     public User createdUser;
 
@@ -35,6 +53,17 @@ public class Signup_page1 extends AppCompatActivity {
         id=findViewById(R.id.id);
         password=findViewById(R.id.password);
         nickname=findViewById(R.id.nickname);
+        Button selectImage=findViewById(R.id.selectImage);
+        imageView=findViewById(R.id.imageview);
+
+        selectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(Intent.ACTION_PICK);
+                intent.setType("image/*");
+                startActivityResult.launch(intent);
+            }
+        });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,4 +99,19 @@ public class Signup_page1 extends AppCompatActivity {
         toastView.show();
 
     }
+    ActivityResultLauncher<Intent>startActivityResult=registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+                    if(result.getResultCode()==RESULT_OK&&result.getData()!=null)
+                    {
+                        uri=result.getData().getData();
+                        Glide.with(getApplicationContext()).load(uri).apply(new RequestOptions().circleCrop()).into(imageView);
+
+
+                    }
+                }
+            }
+    );
+
 }

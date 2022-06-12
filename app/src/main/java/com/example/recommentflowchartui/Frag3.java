@@ -41,7 +41,7 @@ public class Frag3 extends Fragment {
         arrayList=new ArrayList<>();
         categoryAdapter=new CategoryAdapter(arrayList);
         recyclerView.setAdapter(categoryAdapter);
-        for(int i=0 ; i<50 ; i++)
+        for(int i=0 ; i<10 ; i++)
         {
             CategoryData categoryData=new CategoryData(R.drawable.star,"카테고리");
             arrayList.add(categoryData);
