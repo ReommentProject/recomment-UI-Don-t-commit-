@@ -21,14 +21,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:textSize="30dp"
             android:text="YouTube Link" />
 
         <EditText
             android:id="@+id/uploadlink"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
             android:layout_marginTop="7dp"
             android:background="@drawable/buttondesign"
             android:ems="10"
@@ -38,15 +39,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:textSize="30dp"
             android:layout_marginTop="15dp"
             android:text="Title" />
 
         <EditText
             android:id="@+id/uploadtitle"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
             android:ems="10"
             android:layout_marginTop="7dp"
             android:background="@drawable/buttondesign"
@@ -56,49 +58,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/font"
-            android:textStyle="bold"
-            android:textSize="20dp"
+            android:textStyle="italic"
+            android:textColor="#000000"
+            android:textSize="30dp"
             android:layout_marginTop="15dp"
-            android:text="review" />
+            android:text="Review" />
 
         <EditText
             android:id="@+id/uploadreview"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
+            android:layout_width="340dp"
+            android:layout_height="50dp"
             android:background="@drawable/buttondesign"
             android:layout_marginTop="7dp"
             android:ems="10"
             android:hint=" review" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/font"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:layout_marginTop="15dp"
-            android:text="TextView" />
-
-        <EditText
-            android:id="@+id/selectcategory"
-            android:layout_width="350dp"
-            android:layout_height="40dp"
-            android:background="@drawable/buttondesign"
-            android:layout_marginTop="7dp"
-            android:ems="10"
-            android:hint=" category" />
-
-        <Button
-            android:id="@+id/upload"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/font"
-            android:layout_marginTop="100dp"
-            android:background="@drawable/buttondesign"
-            android:textStyle="bold"
-            android:textSize="20dp"
-            android:text="upload" />
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:background="@drawable/buttondesign"
+        android:fontFamily="@font/font"
+        android:padding="10dp"
+        android:text="next"
+        android:textSize="30dp" />
 </LinearLayout>

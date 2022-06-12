@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.recommentflowchartui">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecommentFlowchartUI"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".uploadcategory"
+            android:exported="false" />
+        <activity
+            android:name=".Friendlist"
+            android:exported="false" />
         <activity
             android:name=".Mainpage"
             android:exported="false" />
