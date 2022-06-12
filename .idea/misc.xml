@@ -40,6 +40,8 @@
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign2.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/gradation1.xml" value="0.111" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/menu_selector_color.xml" value="0.111" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/toast_shape.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_friendlist.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_loginpage.xml" value="0.109375" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_main.xml" value="0.109375" />
@@ -52,6 +54,7 @@
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/frag1.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/frag2.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/frag3.xml" value="0.176" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/item_category.xml" value="0.4" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/item_friendlist.xml" value="0.2" />
       </map>
     </option>
