@@ -13,6 +13,12 @@
         android:theme="@style/Theme.RecommentFlowchartUI"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".MakeComments"
+            android:exported="false" />
+        <activity
+            android:name=".Commentlist"
+            android:exported="false" />
+        <activity
             android:name=".SeeProfile"
             android:exported="false" />
         <activity

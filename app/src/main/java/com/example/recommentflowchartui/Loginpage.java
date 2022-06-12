@@ -42,7 +42,7 @@ public class Loginpage extends AppCompatActivity {
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(Loginpage.this,Mainpage.class);
+                Intent intent=new Intent(Loginpage.this,Commentlist.class);
                 startActivity(intent);
             }
         });
