@@ -1,5 +1,7 @@
 package com.example.recommentflowchartui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +20,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.CustomView
 
 
     private ArrayList<friendData> arrayList;
+    private Context mContext;
 
 
     public FriendAdapter(ArrayList<friendData> arrayList) {
@@ -27,7 +30,7 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.CustomView
     @NonNull
     @Override
     public FriendAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+        mContext=parent.getContext();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_friendlist,parent,false);
         CustomViewHolder holder=new CustomViewHolder(view);
         return holder;
@@ -60,6 +63,16 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.CustomView
             this.fprofile=(ImageView) itemView.findViewById(R.id.fprofile);
             this.name=(TextView) itemView.findViewById(R.id.name);
             this.content=(TextView) itemView.findViewById(R.id.content);
+            fprofile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int currentPos=getAdapterPosition();
+                    friendData friendData=arrayList.get(currentPos);
+                    Intent intent=new Intent(mContext,FriendPage.class);
+                    mContext.startActivity(intent);
+
+                }
+            });
         }
     }
 }

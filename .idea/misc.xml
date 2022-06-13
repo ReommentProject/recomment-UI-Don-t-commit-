@@ -39,11 +39,15 @@
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable-v24/gradation2.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign2.xml" value="0.111" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign2_1.xml" value="0.1205" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign2_2.xml" value="0.1285" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign3.xml" value="0.1285" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/buttondesign4.xml" value="0.1205" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/gradation1.xml" value="0.111" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/likedesign.xml" value="0.1285" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/menu_selector_color.xml" value="0.111" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/drawable/toast_shape.xml" value="0.111" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_category_video_list.xml" value="0.1203125" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_commentlist.xml" value="0.109375" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_friend_page.xml" value="0.2" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_friendlist.xml" value="0.13496376811594202" />
@@ -53,7 +57,7 @@
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_mainpage.xml" value="0.109375" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_make_comments.xml" value="0.109375" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_other_page.xml" value="0.264" />
-        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_post_page.xml" value="0.4" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_post_page.xml" value="0.176" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_see_profile.xml" value="0.11770833333333333" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_signup_finish.xml" value="0.109375" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/activity_signup_page1.xml" value="0.2" />
@@ -65,6 +69,7 @@
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/frag2.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/frag3.xml" value="0.176" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/item_category.xml" value="0.4" />
+        <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/item_categoryvideo.xml" value="0.1203125" />
         <entry key="..\:/Users/tlsgy/Recomment-semiFinal/Recomment-UI-and-Backend/app/src/main/res/layout/item_friendlist.xml" value="0.2" />
       </map>
     </option>

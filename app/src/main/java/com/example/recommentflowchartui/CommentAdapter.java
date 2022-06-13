@@ -1,5 +1,7 @@
 package com.example.recommentflowchartui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CustomVi
 
 
     private ArrayList<CommentData> arrayList;
+    private Context mContext;
 
 
     public CommentAdapter(ArrayList<CommentData> arrayList) {
@@ -30,7 +33,7 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CustomVi
     @NonNull
     @Override
     public CommentAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
+        mContext=parent.getContext();
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_item_commentlist,parent,false);
         CommentAdapter.CustomViewHolder holder=new CommentAdapter.CustomViewHolder(view);
         return holder;
@@ -63,6 +66,17 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CustomVi
             this.commentprofile=(ImageView) itemView.findViewById(R.id.commentprofile);
             this.commentnick=(TextView) itemView.findViewById(R.id.commentncik);
             this.comment=(TextView) itemView.findViewById(R.id.comment);
+
+            commentprofile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int currentPos=getAdapterPosition();
+                    CommentData commentData=arrayList.get(currentPos);
+                    Intent intent=new Intent(mContext,FriendPage.class);
+                    mContext.startActivity(intent);
+
+                }
+            });
         }
     }
 }

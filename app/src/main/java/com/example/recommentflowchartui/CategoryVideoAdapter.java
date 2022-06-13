@@ -16,30 +16,31 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CustomViewHolder> {
+public class CategoryVideoAdapter extends RecyclerView.Adapter<CategoryVideoAdapter.CustomViewHolder> {
 
 
-    private ArrayList<CategoryData> arrayList;
+    private ArrayList<CategoryVideoData> arrayList;
     private Context mContext;
 
 
-    public CategoryAdapter(ArrayList<CategoryData> arrayList) {
+    public CategoryVideoAdapter(ArrayList<CategoryVideoData> arrayList) {
         this.arrayList = arrayList;
     }
 
     @NonNull
     @Override
-    public CategoryAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoryVideoAdapter.CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         mContext=parent.getContext();
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_category,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_categoryvideo,parent,false);
         CustomViewHolder holder=new CustomViewHolder(view);
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryAdapter.CustomViewHolder holder, int position) {
-        holder.star.setImageResource(arrayList.get(position).getStar());
-        holder.cname.setText(arrayList.get(position).getName());
+    public void onBindViewHolder(@NonNull CategoryVideoAdapter.CustomViewHolder holder, int position) {
+        holder.videoimg.setImageResource(arrayList.get(position).getVideoimg());
+        holder.videotitle.setText(arrayList.get(position).getVideotitle());
+        holder.videoreview.setText(arrayList.get(position).getVideoreview());
         holder.itemView.setTag(position);
 
 
@@ -54,18 +55,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Custom
 
     public class CustomViewHolder extends RecyclerView.ViewHolder {
 
-        protected ImageView star;
-        protected TextView cname;
+        protected ImageView videoimg;
+        protected TextView videotitle;
+        protected TextView videoreview;
         public CustomViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.star=(ImageView) itemView.findViewById(R.id.star);
-            this.cname=(TextView) itemView.findViewById(R.id.cname);
+            this.videoimg=(ImageView) itemView.findViewById(R.id.videoimg);
+            this.videotitle=(TextView) itemView.findViewById(R.id.videotitle);
+            this.videoreview=(TextView) itemView.findViewById(R.id.videoreview);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     int currentPos=getAdapterPosition();
-                    CategoryData categoryData=arrayList.get(currentPos);
-                    Intent intent=new Intent(mContext,CategoryVideoList.class);
+                    CategoryVideoData categoryVideoData=arrayList.get(currentPos);
+                    Intent intent=new Intent(mContext,post_page.class);
                     mContext.startActivity(intent);
 
                 }
@@ -73,3 +76,4 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Custom
         }
     }
 }
+

@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RecommentFlowchartUI"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".CategoryVideoList"
+            android:exported="false" />
+        <activity
             android:name=".MakeComments"
             android:exported="false" />
         <activity
