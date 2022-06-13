@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -26,6 +27,7 @@ public class FriendPage extends AppCompatActivity {
     private CategoryAdapter categoryAdapter;
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
+    private TextView friendprofile;
 
 
     @Override
@@ -38,6 +40,7 @@ public class FriendPage extends AppCompatActivity {
         actionBar.hide();
         friendlist=(Button) findViewById(R.id.seefriend);
         breakfriend=(Button) findViewById(R.id.breakfriend);
+        friendprofile=(TextView)findViewById(R.id.friendprofile);
         recyclerView=(RecyclerView) findViewById(R.id.recyclerView4);
         linearLayoutManager=new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -60,6 +63,13 @@ public class FriendPage extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(FriendPage.this,Friendlist.class);
+                startActivity(intent);
+            }
+        });
+        friendprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(FriendPage.this,SeeProfile.class);
                 startActivity(intent);
             }
         });
